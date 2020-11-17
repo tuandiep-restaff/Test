@@ -32,7 +32,15 @@ jobs:
     - name: Write file
       uses: DamianReeves/write-file-action@v1.0
       with:
-        path: ${{ env.ENVIRONMENT}}/.bashrc
+        path: ${{ env.ENVIRONMENT}}/.txt
         contents: |
           echo "Hello World!"
         write-mode: append
+        
+    - name: Read package.json
+      id: package
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ${{ env.ENVIRONMENT}}/.txt
+    - name: Echo package.json
+      run: echo ${{ steps.package.outputs.content }}
