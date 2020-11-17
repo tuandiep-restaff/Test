@@ -20,6 +20,8 @@ jobs:
     # Get tag
     - name: 'Get Previous tag'
       id: previoustag
-      run : echo ${{ github.event.release.tag_name }}
-      shell: bash
+      uses: battila7/get-version-action@v2
+    - name: Some other action
+      with:
+        destination_dir: ${{ steps.get_version.outputs.version }}
       
