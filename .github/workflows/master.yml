@@ -34,7 +34,7 @@ jobs:
       with:
         path: ${{ env.ENVIRONMENT}}/Test/src/CurrentCommit.txt
         contents: |
-          echo "${{ steps.previoustag.outputs.tag }}
+          echo "${{ steps.previoustag.outputs.tag }}"
         write-mode: append
         
     - name: Read package.json
