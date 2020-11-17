@@ -29,6 +29,7 @@ jobs:
       shell: bash
     
     - name: write file
+      uses: DamianReeves/write-file-action
       with:
         path: ${{ env.home}}/CurrentCommit.txt
         contents: echo ${{ steps.previoustag.outputs.tag }}
