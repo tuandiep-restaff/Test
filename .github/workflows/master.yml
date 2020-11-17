@@ -22,6 +22,7 @@ jobs:
       id: previoustag
       uses: battila7/get-version-action@v2
     - name: Some other action
-      with:
-        destination_dir: ${{ steps.get_version.outputs.version }}
+      run:
+        echo ${{ steps.get_version.outputs.version }}
+      shell: bash
       
