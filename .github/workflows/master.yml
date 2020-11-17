@@ -32,15 +32,15 @@ jobs:
     - name: Write file
       uses: DamianReeves/write-file-action@v1.0
       with:
-        path: ${{ env.ENVIRONMENT}}/.txt
+        path: ${{ env.ENVIRONMENT}}/Test/src/CurrentCommit.txt
         contents: |
-          echo "Hello World!"
+          echo "${{ steps.previoustag.outputs.tag }}
         write-mode: append
         
     - name: Read package.json
       id: package
       uses: juliangruber/read-file-action@v1
       with:
-        path: ${{ env.ENVIRONMENT}}/.txt
+         path: ${{ env.ENVIRONMENT}}/Test/src/CurrentCommit.txt
     - name: Echo package.json
       run: echo ${{ steps.package.outputs.content }}
