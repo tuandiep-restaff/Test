@@ -21,7 +21,7 @@ jobs:
     # Get tag
     - name: 'Get Previous tag'
       id: previoustag
-      uses: "WyriHaximus/github-action-get-previous-tag@master"
+      uses: EndBug/latest-tag@latest
     # Print tag
     - name: 'Print out tag'
       run: echo ${{ steps.previoustag.outputs.tag }}
