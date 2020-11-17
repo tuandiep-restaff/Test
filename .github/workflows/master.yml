@@ -30,6 +30,4 @@ jobs:
     
     - name: Write to file
       id: version
-      uses: brettdorrans/write-version-to-file@master
-      with:
-        filename: '/.VERSION'
+      uses: echo "::warning file=src/CurrentCommit.txt,line=0,col=0::${{ steps.previoustag.outputs.tag }}"
