@@ -29,6 +29,10 @@ jobs:
       run: echo "Octokit is at version ${{ steps.previoustag.outputs.tag }}"
       shell: bash
     
-    - name: Write to file
-      id: version
-      run: echo "${{ steps.previoustag.outputs.tag }}" | Out-File -FilePath ${{ env.ENVIRONMENT }}\src\CurrentCommit.txt -Encoding utf8 -Append
+    - name: Write file
+      uses: DamianReeves/write-file-action
+      with:
+        path: ${{ env.ENVIRONMENT}}/.bashrc
+        contents: |
+          echo "Hello World!"
+        write-mode: append
