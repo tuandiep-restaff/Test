@@ -31,4 +31,4 @@ jobs:
     
     - name: Write to file
       id: version
-      run: echo "${{ steps.previoustag.outputs.tag }}" > ${{ env.ENVIRONMENT }}\src\CurrentCommit.txt
+      run: echo "${{ steps.previoustag.outputs.tag }}" | Out-File -FilePath ${{ env.ENVIRONMENT }}\src\CurrentCommit.txt -Encoding utf8 -Append
