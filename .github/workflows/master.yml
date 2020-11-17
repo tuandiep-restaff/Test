@@ -2,10 +2,10 @@ name: CI/CD for Develop
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 env:
-  ENVIRONMENT: 'master'
+  ENVIRONMENT: 'main'
 
 jobs:
   build-and-deploy:
