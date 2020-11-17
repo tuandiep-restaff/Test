@@ -20,10 +20,9 @@ jobs:
         fetch-depth: 0
     # Get tag
     - name: 'Get Previous tag'
-      id: previoustag
-      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+      id: get_version
+      run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
     # Print tag
     - name: 'Print out tag'
-      run: |
-        echo ${{ steps.previoustag.outputs.tag }}
+      run: echo ${{ steps.get_version.outputs.VERSION }}
       
