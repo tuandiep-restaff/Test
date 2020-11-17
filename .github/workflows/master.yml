@@ -27,3 +27,9 @@ jobs:
     - name: Some other action
       run: echo "Octokit is at version ${{ steps.previoustag.outputs.tag }}"
       shell: bash
+    
+    - name: write file
+      with:
+        path: ${{ env.home}}/CurrentCommit.txt
+        contents: echo ${{ steps.previoustag.outputs.tag }}
+        write-mode: append
