@@ -20,9 +20,10 @@ jobs:
     # Get tag
     - name: 'Get Previous tag'
       id: previoustag
-      uses: battila7/get-version-action@v2
+      uses: oprypin/find-latest-tag@v1
+      with:
+        repository: tuandiep-restaff/Test
+        releases-only: true
     - name: Some other action
-      run:
-        echo ${{ steps.previoustag.outputs.version }}
+      run: echo "Octokit is at version ${{ steps.previoustag.outputs.tag }}"
       shell: bash
-      
