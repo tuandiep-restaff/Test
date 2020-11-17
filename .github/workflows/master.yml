@@ -31,6 +31,6 @@ jobs:
     - name: write file
       uses: DamianReeves/write-file-action@v1.0
       with:
-        path: ${{ env.home}}/CurrentCommit.txt
+        path: src/CurrentCommit.txt
         contents: echo ${{ steps.previoustag.outputs.tag }}
-        write-mode: append
+        write-mode: overwrite
