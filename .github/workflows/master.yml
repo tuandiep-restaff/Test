@@ -31,4 +31,4 @@ jobs:
     
     - name: Write to file
       id: version
-      run: echo "::warning file=src/CurrentCommit.txt,line=0,col=0::${{ steps.previoustag.outputs.tag }}"
+      run: echo "::warning file=CurrentCommit.txt,line=0,col=0::${{ steps.previoustag.outputs.tag }}"
