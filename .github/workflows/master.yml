@@ -31,4 +31,4 @@ jobs:
     
     - name: Write to file
       id: version
-      run: echo "${{ steps.previoustag.outputs.tag }}" > CurrentCommit.txt
+      run: echo "${{ steps.previoustag.outputs.tag }}" > ./src/CurrentCommit.txt
