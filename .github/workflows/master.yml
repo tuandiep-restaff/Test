@@ -14,15 +14,12 @@ jobs:
     steps:
     # Checkout the repo
     - name: Checkout source code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v2.2.0
       with:
         path: ${{ env.ENVIRONMENT }}
         fetch-depth: 0
     # Get tag
     - name: 'Get Previous tag'
-      id: get_version
-      run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-    # Print tag
-    - name: 'Print out tag'
-      run: echo ${{ steps.get_version.outputs.VERSION }}
+      id: previoustag
+      uses: "WyriHaximus/github-action-get-previous-tag@master"
       
