@@ -21,7 +21,7 @@ jobs:
     # Get tag
     - name: 'Get Previous tag'
       id: previoustag
-      uses: EndBug/latest-tag@latest
+      run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
     # Print tag
     - name: 'Print out tag'
       run: echo ${{ steps.previoustag.outputs.tag }}
