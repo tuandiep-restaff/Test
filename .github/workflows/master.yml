@@ -25,3 +25,4 @@ jobs:
     # Print tag
     - name: 'Print out tag'
       run: echo ${{ steps.previoustag.outputs.tag }}
+      
