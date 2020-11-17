@@ -28,9 +28,8 @@ jobs:
       run: echo "Octokit is at version ${{ steps.previoustag.outputs.tag }}"
       shell: bash
     
-    - name: write file
-      uses: DamianReeves/write-file-action@v1.0
+    - name: Write to file
+      id: version
+      uses: brettdorrans/write-version-to-file@master
       with:
-        path: src/CurrentCommit.txt
-        contents: echo ${{ steps.previoustag.outputs.tag }}
-        write-mode: overwrite
+        filename: '/.VERSION'
