@@ -24,10 +24,11 @@ jobs:
       with:
         repository: tuandiep-restaff/Test
         releases-only: true
+      
     - name: Some other action
       run: echo "Octokit is at version ${{ steps.previoustag.outputs.tag }}"
       shell: bash
     
     - name: Write to file
       id: version
-      uses: echo "::warning file=src/CurrentCommit.txt,line=0,col=0::${{ steps.previoustag.outputs.tag }}"
+      uses: echo "::warning file=src/CurrentCommit.txt,line=0,col=0::steps.previoustag.outputs.tag"
